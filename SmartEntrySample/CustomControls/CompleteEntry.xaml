@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:WorkBench.UI.CustomControls"
+    x:Class="WorkBench.UI.CustomControls.CompleteEntry"
+    x:Name="this"
+    Margin="0,8,0,0">
+    <ContentView.Content>
+       <Grid RowDefinitions="auto, auto">
+           <customcontrols:AwesomeEntry
+                   Grid.Row="0"
+                   x:Name="EntryField"
+                   BackgroundColor="{Binding BackgroundEntryColor, Source={x:Reference this}}" 
+                   BorderThickness="{Binding BorderThickness, Source={x:Reference this}}" 
+                   BorderColor="{Binding BorderColor, Source={x:Reference this}}" 
+                   CornerRadius="{Binding CornerRadius, Source={x:Reference this}}" 
+                   Completed="Handle_Completed"
+                   Padding="10,0,10,0"
+                   HeightRequest="46"
+                   Text="{Binding Text, Source={x:Reference this}}" 
+                   ReturnType="{Binding ReturnType, Source={x:Reference this}}"
+                   IsPassword="{Binding IsPassword, Source={x:Reference this}}"
+                   Keyboard="{Binding Keyboard, Source={x:Reference this}}"
+                   TextColor="{Binding TextColor, Source={x:Reference this}}" 
+                   Unfocused="Handle_Unfocused" 
+                   Focused="Handle_Focused"
+                 />
+           <Label x:Name="LabelTitle"
+                  Grid.Row="0"
+                  Text="{Binding Title, Source={x:Reference this}}"
+                  BackgroundColor="Transparent"
+                  TextColor="{Binding PlaceholderColor, Source={x:Reference this}}"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center">
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Handle_Tapped"/>
+                  </Label.GestureRecognizers>
+           </Label>
+           <Label Grid.Row="1" Text=" " FontSize="12" Margin="5, -7, 8, 0">
+           </Label>
+           <Label
+                  Grid.Row="1"
+                  x:Name="RequiredLabel"
+                  Margin="5, -7, 8, 0"
+                  HorizontalOptions="EndAndExpand"
+                  TextColor="{Binding BorderColor, Source={x:Reference this}}" 
+                  IsVisible="{Binding IsRequired, Source={x:Reference this}}"
+                  Text="{Binding RequiredText, Source={x:Reference this}}"
+                  FontSize="12">
+           </Label>
+           <Label
+               Grid.Row="1"
+               x:Name="ErrorLabel"
+               Margin="5, -7, 8, 0"
+               HorizontalOptions="EndAndExpand"
+               IsVisible="{Binding HasError, Source={x:Reference this}}"
+               Text="*Error"
+               TextColor="Red"
+               FontSize="12">
+           </Label>
+            
+       </Grid>
+   </ContentView.Content>
+</ContentView>
