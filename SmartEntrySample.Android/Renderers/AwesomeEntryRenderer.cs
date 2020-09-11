@@ -2,15 +2,14 @@ using System;
 using System.ComponentModel;
 using Android.Content;
 using Android.Graphics.Drawables;
-using WorkBench.Droid.Renderers;
-using WorkBench.UI.CustomControls;
+using SmartEntrySample.Droid.Renderers;
+using SmartEntrySample.CustomControls;
 using Xamarin.Forms;
-using Xamarin.Forms.Material.Android;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(AwesomeEntry), typeof(AwesomeEntryRenderer))]
 
-namespace WorkBench.Droid.Renderers
+namespace SmartEntrySample.Droid.Renderers
 {
     public class AwesomeEntryRenderer : EntryRenderer
     {

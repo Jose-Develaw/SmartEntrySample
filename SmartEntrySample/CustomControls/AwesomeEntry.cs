@@ -1,7 +1,7 @@
 using System;
 using Xamarin.Forms;
 
-namespace WorkBench.UI.CustomControls
+namespace SmartEntrySample.CustomControls
 {
     public class AwesomeEntry : Entry
     {

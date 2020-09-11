@@ -4,13 +4,13 @@ using System.Drawing;
 using CoreGraphics;
 using Foundation;
 using UIKit;
-using WorkBench.iOS.Renderers;
-using WorkBench.UI.CustomControls;
+using SmartEntrySample.iOS.Renderers;
+using SmartEntrySample.CustomControls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(AwesomeEntry), typeof(iOSAwesomeEntryRenderer))]
-namespace WorkBench.iOS.Renderers
+namespace SmartEntrySample.iOS.Renderers
 {
     public class iOSAwesomeEntryRenderer : EntryRenderer
     {

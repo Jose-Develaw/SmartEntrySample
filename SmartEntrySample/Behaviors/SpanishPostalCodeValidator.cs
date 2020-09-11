@@ -1,9 +1,9 @@
 using System;
 using System.Text.RegularExpressions;
-using WorkBench.UI.CustomControls;
+using SmartEntrySample.CustomControls;
 using Xamarin.Forms;
 
-namespace WorkBench.UI.Behaviors
+namespace SmartEntrySample.Behaviors
 {
     public class SpanishPostalCodeValidator : Behavior<CompleteEntry>
     {

@@ -2,12 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using MvvmCross.Forms.Views;
-using WorkBench.UI.Behaviors;
-using WorkBench.UI.Pages;
+using SmartEntrySample.Behaviors;
 using Xamarin.Forms;
 
-namespace WorkBench.UI.CustomControls
+namespace SmartEntrySample.CustomControls
 {
     public partial class CompleteEntry : ContentView
     {

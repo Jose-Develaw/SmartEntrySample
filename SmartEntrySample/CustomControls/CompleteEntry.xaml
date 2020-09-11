@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:WorkBench.UI.CustomControls"
-    x:Class="WorkBench.UI.CustomControls.CompleteEntry"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:SmartEntrySample.CustomControls"
+    x:Class="SmartEntrySample.CustomControls.CompleteEntry"
     x:Name="this"
     Margin="0,8,0,0">
     <ContentView.Content>
@@ -58,7 +59,6 @@
                TextColor="Red"
                FontSize="12">
            </Label>
-            
        </Grid>
    </ContentView.Content>
 </ContentView>
