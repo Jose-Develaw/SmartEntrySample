@@ -48,5 +48,5 @@ You don't have to worry about the names, it uses an enum, so you will know!
     </StackLayout>
 ```
 ## Let's see the magic in action
+![me](https://github.com/Jose-Develaw/SmartEntrySample/blob/master/completeentrysample.gif)
 
-(Sample video here)
