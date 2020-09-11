@@ -278,7 +278,7 @@ namespace SmartEntrySample.CustomControls
                 {
                     if (Device.RuntimePlatform == Device.Android)
                     {
-                        LabelTitle.BackgroundColor = Color.FromHex("#FAFAFA");
+                        LabelTitle.BackgroundColor = App.Current.RequestedTheme == OSAppTheme.Light ? Color.FromHex("#FAFAFA") : Color.FromHex("#303030");
                     }
                     else
                     {
