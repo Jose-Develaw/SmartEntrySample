@@ -1,20 +1,20 @@
 # SmartEntrySample.CompleteEntry
 
-(This is a work in progress)
+(This work is currently in development)
 
 ## What is SmartEntry.CompleteEntry?
 
-It is a custom entry that includes some properties for making your life easier when building forms whose fields need to be validated.
+It is a custom entry that includes some properties for making your life easier when building forms composed of fields that need to be validated.
 
 ## How it works?
 
-The magic property is called "<b>BehaveAs</b>". This property is in charge of managing the behaviors attached to the entry so it can validate its content by itself.
+The magic property is called "<b>BehaveAs</b>". This property is in charge of managing the behaviors attached to each entry so it can automatically validate its content.
 
 Smart, isn't it?
 
 ## Other nice stuff
 
-There are other properties that will help you increasing your forms building speed:
+There are other properties that will help you increase your form building speed:
 
 Property | Type | Explanation | Default |
 -------- | ---- | ----------- | --------|
