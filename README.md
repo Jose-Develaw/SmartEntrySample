@@ -8,7 +8,7 @@ It is a custom entry that includes some properties for making your life easier w
 
 ## How it works?
 
-The magic property is called "BehaveAs". This property is in charge of managing the behaviors attached to the entry so it can validate its content by itself.
+The magic property is called "<b>BehaveAs</b>". This property is in charge of managing the behaviors attached to the entry so it can validate its content by itself.
 
 Smart, isn't it?
 
