@@ -59,7 +59,7 @@ I already can hear you complaining... <em>"This looks like a pretty closed syste
 
 No worries. Just follow these two simple steps:
 
-1) Create your custom validator by inheriting from the awesome SmartBehavior class. You will have to add this constructor and override the IsTextValid (there is where you add you validation method)
+1) Create your custom validator by inheriting from the awesome SmartBehavior class. You will have to add this constructor and override the IsTextValid (there is where you add your validation method)
 
 ```
 public class MyCustomValidator : SmartBehavior
