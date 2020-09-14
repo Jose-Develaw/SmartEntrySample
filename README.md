@@ -25,10 +25,13 @@ PlaceHolderColor| color ||  Color.Gray |
 
 ## Current behavior list (validations)
 
-* Spanish Postal Code
-* Spanish NIF
-* Spanish CIF
-* Email
+Name | Validation | Default Error Message |
+-------- | ---- | ----------- |
+Email | Email | Email no válido | 
+ES_PosCode | Spanish Postal Code | Código Postal no válido|
+ES_NIF | Spanish NIF | NIF no válido | 
+ES_CIF | Spanish CIF | CIF no válido | 
+
 
 You don't have to worry about the names, it uses an enum, so you will know!
 
@@ -47,8 +50,43 @@ Managing required fields with 'IsRequired' and 'RequiredText'
   <customcontrols:CompleteEntry BehaveAs="ES_PosCode" Title="Código Postal" BorderColor="Green" FocusedBorderColor="Purple" PlaceholderColor="DarkOrange" TextColor="Purple"/>
 ```
 ## Let's see the magic in action
-![me](https://github.com/Jose-Develaw/SmartEntrySample/blob/master/completeentrysample.gif)
+![me](https://github.com/Jose-Develaw/SmartEntrySample/blob/master/SampleGif.gif)
 
 
+## Custom SmartBehaviors
+
+I already can hear you complaining... <em>"This looks like a pretty closed system to me... What if I want to add my own validator?"</em>
+
+No worries. Just follow these two simple steps:
+
+1) Create your custom validator by inheriting from the awesome SmartBehavior class. You will have to add this constructor and override the IsTextValid (there is where you add you validation method)
+
+```
+public class MyCustomValidator : SmartBehavior
+    {
+        public MyCustomValidator(string ErrorText) : base(ErrorText) { }
+
+        public override bool IsTextValid(string text)
+        {
+            throw new NotImplementedException();
+        }
+    }
+   ```
+   
+   Wow, that was pretty easy... Now go for the second step.
+
+2) Create a new SmartEntry.CompleteEntry and add you shinny custom validator to it
+
+```
+<customcontrols:CompleteEntry x:Name="MyCustomControl" Title="MyCustomControl"/>
+```
+```
+MyCustomControl.Behaviors.Add(new MyCustomValidator("My custom error message"));
+
+```
+
+That's it.
+
+BTW, if you create some incredible validators and you want them to be added to the main package, just let me know!!
 
 
