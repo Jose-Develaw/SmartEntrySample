@@ -19,7 +19,7 @@ There are other properties that will help you increase your form building speed:
 Property | Type | Explanation | Default |
 -------- | ---- | ----------- | --------|
 IsRequired| boolean |If true, it will show the "RequiredLabel" with the message you chose.| False |
-RequiredText| string |This is where you choose the message showed by the "RequiredLabel"| Campo Obligatorio |
+RequiredText| string |This is where you choose the message showed by the "RequiredLabel"| Required field |
 FocusedBorderColor| color ||  Color.Gray |
 PlaceHolderColor| color ||  Color.Gray |
 
