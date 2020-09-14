@@ -3,12 +3,14 @@
     <StackLayout BackgroundColor="WhiteSmoke" Padding="20">
         <Label Text="SmartEntrySample" FontSize="Title" HorizontalTextAlignment="Center" TextDecorations="Underline" HorizontalOptions="CenterAndExpand" TextColor="Gray" Margin="0,0,0,10"/>
         <Label Text="Comportamiento: Cp Requerido: False" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="CodPos" Title="Código Postal" ></customcontrols:CompleteEntry>
+        <customcontrols:CompleteEntry BehaveAs="ES_PosCode" Title="Código Postal" ></customcontrols:CompleteEntry>
         <Label Text="Comportamiento: Email; Requerido: True" TextColor="Gray"/>
         <customcontrols:CompleteEntry BehaveAs="Email" IsRequired="True" Title="Email"></customcontrols:CompleteEntry>
         <Label Text="Comportamiento: NIF /Requerido: True / FocusedBorderColor" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="NIF" IsRequired="True" Title="NIF (Español)"  FocusedBorderColor="DarkOrange" ></customcontrols:CompleteEntry>
+        <customcontrols:CompleteEntry BehaveAs="ES_NIF" IsRequired="True" Title="NIF (Español)"  FocusedBorderColor="DarkOrange" ></customcontrols:CompleteEntry>
         <Label Text="Comportamiento: NIF /Requerido: True / PlaceHolderColor" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="NIF" IsRequired="True" Title="NIF (Español)"  PlaceholderColor="Crimson" ></customcontrols:CompleteEntry>
+        <customcontrols:CompleteEntry BehaveAs="ES_NIF" IsRequired="True" Title="NIF (Español)"  PlaceholderColor="Crimson" ></customcontrols:CompleteEntry>
+
+        <customcontrols:CompleteEntry x:Name="MyCustomControl" Title="MyCustomControl"/>
     </StackLayout>
 </ContentPage>

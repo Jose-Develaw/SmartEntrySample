@@ -1,92 +1,27 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
-using SmartEntrySample.CustomControls;
-using Xamarin.Forms;
 
 namespace SmartEntrySample.Behaviors
 {
-    public class CIFValidator : Behavior<CompleteEntry>
+    public class SpanishCIFValidator : SmartBehavior
     {
-        bool wasRequired = false;
-
-        protected override void OnAttachedTo(CompleteEntry bindable)
+        public SpanishCIFValidator(string ErrorText) : base(ErrorText)
         {
-            bindable.AwesomeEntry.Unfocused += Bindable_CifUnfocused;
-            bindable.AwesomeEntry.TextChanged += Bindable_TextChange;
-            base.OnAttachedTo(bindable);
         }
 
-        protected override void OnDetachingFrom(CompleteEntry bindable)
+        public override bool IsTextValid(string text)
         {
-            bindable.AwesomeEntry.TextChanged -= Bindable_CifUnfocused;
-            bindable.AwesomeEntry.TextChanged -= Bindable_TextChange;
-            base.OnDetachingFrom(bindable);
-        }
-
-
-        void Bindable_TextChange(object sender, EventArgs e)
-        {
-            var entry = (AwesomeEntry)sender;
-            var complete = (CompleteEntry)entry.Parent.Parent;
-            complete.Error.IsVisible = false;
-            if (wasRequired)
-            {
-                complete.Required.IsVisible = true;
-            }
-        }
-
-        void Bindable_CifUnfocused(object sender, EventArgs e)
-        {
-
-            var entry = (AwesomeEntry)sender;
-            var complete = (CompleteEntry)entry.Parent.Parent;
-            complete.Error.Text = "El CIF no es válido";
-
-            if (!string.IsNullOrEmpty(entry.Text))
-            {
-                if (!valida_CIF(entry.Text))
-                {
-                    complete.Error.IsVisible = true;
-                    if (complete.Required.IsVisible)
-                    {
-                        wasRequired = true;
-                        complete.Required.IsVisible = false;
-                    }
-                }
-                else
-                {
-                    complete.Error.IsVisible = false;
-                    if (wasRequired)
-                    {
-                        complete.Required.IsVisible = true;
-                    }
-
-                }
-            }
-            else
-            {
-                complete.Error.IsVisible = false;
-                if (wasRequired)
-                {
-                    complete.Required.IsVisible = true;
-                }
-            }
-
-        }
-
-
-
-        public static Boolean valida_CIF(string data)
-        {
-            if (String.IsNullOrEmpty(data) || data.Length < 8)
+            if (String.IsNullOrEmpty(text) || text.Length < 8)
                 return false;
 
-            var initialLetter = data.Substring(0, 1).ToUpper();
-            if (Char.IsLetter(data, 0))
+            var initialLetter = text.Substring(0, 1).ToUpper();
+            if (Char.IsLetter(text, 0))
             {
 
-                if (new Regex("[A-Za-z][0-9]{7}[A-Za-z0-9]{1}$").Match(data).Success)
-                    return validaCIF(data);
+                if (new Regex("[A-Za-z][0-9]{7}[A-Za-z0-9]{1}$").Match(text).Success)
+                    return validaCIF(text);
 
                 else
                     return false;
@@ -96,7 +31,7 @@ namespace SmartEntrySample.Behaviors
                 return false;
 
             }
-            
+
         }
 
         public static bool validaCIF(string data)

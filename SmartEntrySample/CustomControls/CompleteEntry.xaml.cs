@@ -30,7 +30,7 @@ namespace SmartEntrySample.CustomControls
         public static BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(CompleteEntry), Color.Black);
         public static readonly BindableProperty IsRequiredProperty = BindableProperty.Create(nameof(IsRequired), typeof(bool), typeof(CompleteEntry), default(bool));
         public static readonly BindableProperty HasErrorProperty = BindableProperty.Create(nameof(HasError), typeof(bool), typeof(CompleteEntry), default(bool));
-        public static readonly BindableProperty RequiredTextProperty = BindableProperty.Create(nameof(RequiredText), typeof(string), typeof(string), "*Campo obligatorio", BindingMode.TwoWay, null);
+        public static readonly BindableProperty RequiredTextProperty = BindableProperty.Create(nameof(RequiredText), typeof(string), typeof(string), "*Required field", BindingMode.TwoWay, null);
         public static BindableProperty CornerRadiusProperty = BindableProperty.Create(nameof(CornerRadius), typeof(int), typeof(CompleteEntry), 5);
         public static BindableProperty BorderThicknessProperty = BindableProperty.Create(nameof(BorderThickness), typeof(int), typeof(CompleteEntry), 1);
         public static BindableProperty PaddingProperty = BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(CompleteEntry), new Thickness(5));
@@ -82,9 +82,9 @@ namespace SmartEntrySample.CustomControls
         {
             Default,
             Email,
-            NIF,
-            CIF,
-            CodPos,
+            ES_NIF,
+            ES_CIF,
+            ES_PosCode,
       
         }
 
@@ -107,19 +107,19 @@ namespace SmartEntrySample.CustomControls
                 switch (behavior)
                 {
                     case "Email":
-                        targetView.Behaviors.Add(new EmailValidator());
+                        targetView.Behaviors.Add(new EmailValidator("Email no válido"));
                         targetView.Keyboard = Keyboard.Email;
                         break;
-                    case "NIF":
-                        targetView.Behaviors.Add(new SpanishNIFValidator("NIF not valid"));
+                    case "ES_NIF":
+                        targetView.Behaviors.Add(new SpanishNIFValidator("NIF no válido"));
                         targetView.Keyboard = Keyboard.Default;
                         break;
-                    case "CIF":
-                        targetView.Behaviors.Add(new CIFValidator());
+                    case "ES_CIF":
+                        targetView.Behaviors.Add(new SpanishCIFValidator("CIF no válido"));
                         targetView.Keyboard = Keyboard.Default;
                         break;
-                    case "CodPos":
-                        targetView.Behaviors.Add(new SpanishPostalCodeValidator());
+                    case "ES_PosCode":
+                        targetView.Behaviors.Add(new SpanishPostalCodeValidator("Código Postal no válido"));
                         targetView.Keyboard = Keyboard.Numeric;
                         break;
                 }

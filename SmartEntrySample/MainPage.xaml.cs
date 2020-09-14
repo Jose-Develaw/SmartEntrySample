@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartEntrySample.Behaviors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace SmartEntrySample
         public MainPage()
         {
             InitializeComponent();
+            MyCustomControl.Behaviors.Add(new MyCustomValidator("My custom error message"));
         }
     }
 }
