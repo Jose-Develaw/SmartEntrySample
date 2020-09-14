@@ -111,7 +111,7 @@ namespace SmartEntrySample.CustomControls
                         targetView.Keyboard = Keyboard.Email;
                         break;
                     case "NIF":
-                        targetView.Behaviors.Add(new NIFValidator());
+                        targetView.Behaviors.Add(new SpanishNIFValidator("NIF not valid"));
                         targetView.Keyboard = Keyboard.Default;
                         break;
                     case "CIF":
