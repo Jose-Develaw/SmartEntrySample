@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:SmartEntrySample.CustomControls" x:Class="SmartEntrySample.MainPage">
-    <StackLayout BackgroundColor="WhiteSmoke" Padding="20">
-        <Label Text="SmartEntrySample" FontSize="Title" HorizontalTextAlignment="Center" TextDecorations="Underline" HorizontalOptions="CenterAndExpand" TextColor="Gray" Margin="0,0,0,10"/>
-        <Label Text="Comportamiento: Cp Requerido: False" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="ES_PosCode" Title="Código Postal" ></customcontrols:CompleteEntry>
-        <Label Text="Comportamiento: Email; Requerido: True" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="Email" IsRequired="True" Title="Email"></customcontrols:CompleteEntry>
-        <Label Text="Comportamiento: NIF /Requerido: True / FocusedBorderColor" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="ES_NIF" IsRequired="True" Title="NIF (Español)"  FocusedBorderColor="DarkOrange" ></customcontrols:CompleteEntry>
-        <Label Text="Comportamiento: NIF /Requerido: True / PlaceHolderColor" TextColor="Gray"/>
-        <customcontrols:CompleteEntry BehaveAs="ES_NIF" IsRequired="True" Title="NIF (Español)"  PlaceholderColor="Crimson" ></customcontrols:CompleteEntry>
+    <StackLayout BackgroundColor="WhiteSmoke" Padding="30">
+        <Label Text="SmartEntry Sample"  FontSize="36" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="DimGray" Margin="0,10,0,10"/>
 
-        <customcontrols:CompleteEntry x:Name="MyCustomControl" Title="MyCustomControl"/>
+        <Label Text="Managing required fields with 'IsRequired' and 'RequiredText'" Margin="0,0,0,10" FontSize="18" TextColor="DimGray" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
+        <customcontrols:CompleteEntry BehaveAs="Email" IsRequired="True" Title="Email" RequiredText="*This field is required" Margin="0,0,0,30"/>
+
+        <Label Text="Managing colors with 'BorderColor', 'FocusedBorderColor', 'PlaceholderColor' and 'TextColor'" FontSize="18"  Margin="0,0,0,10" TextColor="DimGray" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
+        <customcontrols:CompleteEntry BehaveAs="ES_PosCode" Title="Código Postal" BorderColor="Green" FocusedBorderColor="Purple" PlaceholderColor="DarkOrange" TextColor="Purple"/>
+
+       <!-- <customcontrols:CompleteEntry x:Name="MyCustomControl" Title="MyCustomControl"/>-->
     </StackLayout>
 </ContentPage>

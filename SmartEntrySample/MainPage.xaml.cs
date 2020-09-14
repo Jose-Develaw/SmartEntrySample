@@ -14,7 +14,7 @@ namespace SmartEntrySample
         public MainPage()
         {
             InitializeComponent();
-            MyCustomControl.Behaviors.Add(new MyCustomValidator("My custom error message"));
+            //MyCustomControl.Behaviors.Add(new MyCustomValidator("My custom error message"));
         }
     }
 }
